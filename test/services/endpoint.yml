@@ -1,0 +1,5 @@
+rrtype: A
+service:
+  type: endpoint
+  value: 192.168.0.1
+  monitor: ok

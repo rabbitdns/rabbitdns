@@ -1,0 +1,16 @@
+rrtype: A
+service:
+  type: failover
+  values:
+    A:
+      priority: 5
+      next:
+        type: endpoint
+        value: 192.168.0.1
+        monitor: ng
+    B:
+      priority: 10
+      next:
+        type: endpoint
+        value: 192.168.0.2
+        monitor: ok

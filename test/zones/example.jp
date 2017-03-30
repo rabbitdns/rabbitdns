@@ -1,0 +1,13 @@
+$ORIGIN example.jp.
+$TTL 3600
+@ IN SOA     z.example.com. root.example.com. 2 3600 900 1814400 900
+  IN NS ns1.example.jp.
+  IN NS ns2.example.jp.
+ns1 IN A 192.168.0.1
+    IN AAAA 2001:db8::1
+ns2 IN A 192.168.0.2
+    IN AAAA 2001:db8::2
+endpoint IN DYNA endpoint
+weight IN DYNA weight
+failover IN DYNA failover
+geolocation IN DYNA geolocation

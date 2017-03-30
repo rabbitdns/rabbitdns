@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package api;
+
+service RabbitDNS {
+  rpc Reconfig (google.protobuf.Empty) returns (google.protobuf.Empty){};
+  rpc Reload (google.protobuf.Empty) returns (google.protobuf.Empty){};
+  rpc ReloadZone (ReloadRequest) returns (google.protobuf.Empty){};
+  rpc GetZones (google.protobuf.Empty) returns (GetZonesResponse){};
+  rpc GetMonitors (google.protobuf.Empty) returns (GetMonitorsResponse){};
+  rpc GetServices (google.protobuf.Empty) returns (GetServicesResponse){};
+}
+message ReloadRequest {
+  string zonename = 1;
+}
+message GetZonesResponse {
+  repeated Zone zones = 1;
+}
+message GetServicesResponse {
+  repeated Service services = 1;
+}
+message GetMonitorsResponse {
+  repeated Monitor monitors = 1;
+}
+
+message Zone {
+  string name = 1;
+}
+
+message Service {
+  string name = 1;
+}
+
+message Monitor {
+  string name = 1;
+}
+

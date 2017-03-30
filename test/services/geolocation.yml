@@ -1,0 +1,29 @@
+rrtype: A
+service:
+  type: geolocation
+  geodbfile:
+    ipv4: ../../MaxMind-DB/test-data/GeoIP2-Country-Test.mmdb
+    ipv6: ../../MaxMind-DB/test-data/GeoIP2-Country-Test.mmdb
+  locations:
+    DEFAULT:
+      type: endpoint
+      value: 192.168.0.1
+    JP:
+      type: weight
+      next:
+        SITE-A:
+          wight: 10
+          next:
+            type: endpoint
+            value: 192.168.0.2
+        SITE-B:
+          weight: 20
+          next:
+            type: multivalue
+            next:
+              SERVER-B:
+                type: endpoint
+                value: 192.168.1.10
+              SERVER-C:
+                type: endpoint
+                value: 192.168.1.10

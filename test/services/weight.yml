@@ -1,0 +1,15 @@
+rrtype: A
+service:
+  type: weight
+  values:
+    A:
+      weight: 5
+      next:
+        type: endpoint
+        value: 192.168.0.5
+    B:
+      weight: 10
+      next:
+        type: endpoint
+        value: 192.168.0.10
+        monitor: ok

@@ -1,0 +1,8 @@
+---
+interval: 10
+ok: 3
+ng: 3
+up: 5
+timeout: 5
+monitor:
+  type: NG

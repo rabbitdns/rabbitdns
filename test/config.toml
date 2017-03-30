@@ -1,0 +1,10 @@
+
+Listens = ["0.0.0.0:5300"]
+User = "mimuret"
+CtlListens = ["127.0.0.1:15300"]
+MaxTCPQueries = 10
+ZonesDir = "../../test/zones"
+ServicesDir = "../../test/services"
+MonitorsDir = "../../test/monitors"
+MinimumResponse = false
+LogLevel = "debug"
